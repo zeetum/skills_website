@@ -3,12 +3,6 @@ $user = 'skills';
 $pass = 'Holidays2';
 $conn = new PDO('mysql:host=localhost;dbname=skills', $user, $pass);
 
-// Display users to get skills from
-$stmt = $conn->prepare("SELECT DISTINCT staff_name FROM skills");
-$stmt->execute();
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
 
 // Display users to get skills from
 $stmt = $conn->prepare("SELECT DISTINCT staff_name FROM skills");
@@ -22,21 +16,14 @@ foreach ($result as $user) {
 }
 echo "</select>";
 
-echo "<form action='submitskills.php' method='POST' id='skills'><br>";
-echo "<input type='range' min='1' max='4' name='q1'><br>";
-echo "<input type='range' min='1' max='4' name='q2'><br>";
-echo "<input type='range' min='1' max='4' name='q3'><br>";
-echo "<input type='range' min='1' max='4' name='q4'><br>";
-echo "<input type='range' min='1' max='4' name='q5'><br>";
-echo "<input type='range' min='1' max='4' name='q6'><br>";
-echo "<input type='range' min='1' max='4' name='q7'><br>";
-echo "<input type='range' min='1' max='4' name='q8'><br>";
-echo "<input type='range' min='1' max='4' name='q9'><br>";
-echo "<input type='range' min='1' max='4' name='q10'><br>";
-echo "<input type='range' min='1' max='4' name='q11'><br>";
-echo "<input type='range' min='1' max='4' name='q12'><br>";
-echo "<input type='range' min='1' max='4' name='q13'><br>";
-echo "<input type='range' min='1' max='4' name='q14'><br>";
+// Display the questions to submit
+$stmt = $conn->prepare("SELECT q_id, sentence FROM questions");
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach ($result as $question) {
+	echo "<br>".$question['sentence']."<br>";
+	echo "<input type='range' min='1' max='4' name='".$question['q_id']."'><br>";
+}
 echo "</form>";
 echo "<button type='submit' form='skills'>Submit</button>"; 
 	
