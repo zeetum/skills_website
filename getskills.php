@@ -63,7 +63,7 @@ if (isset($_POST['name'])) {
 	echo "<button type='submit' form='selectdate'>Submit</button>"; 
 	
 	if (isset($_POST['date'])) {
-		// Print the Skills Data
+		// Get Skills Data
 		$stmt = $conn->prepare("SELECT q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14 FROM skills
                                 	WHERE staff_name = :staff_name AND completion_date = :completion_date");
 		$stmt->execute(array(
