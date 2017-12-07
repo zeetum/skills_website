@@ -4,7 +4,7 @@ $pass = 'Holidays2';
 $conn = new PDO('mysql:host=localhost;dbname=skills', $user, $pass);
 
 
-// Display users to get skills from
+// Select users to get skills from
 $stmt = $conn->prepare("SELECT DISTINCT staff_name FROM skills");
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
