@@ -20,7 +20,7 @@ CREATE TABLE skills (
 );
 
 CREATE TABLE questions (
-	q_id INT NOT NULL,
+	q_id VARCHAR(20) NOT NULL,
 	sentence VARCHAR(255),
 
 	PRIMARY KEY(q_id)
