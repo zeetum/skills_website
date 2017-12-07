@@ -25,3 +25,5 @@ CREATE TABLE questions (
 
 	PRIMARY KEY(q_id)
 );
+
+insert into questions (q_id, sentence) VALUES ('q1', "The quick brown fox");
