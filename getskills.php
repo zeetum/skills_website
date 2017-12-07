@@ -39,7 +39,7 @@ echo "<button type='submit' form='selectuser'>Submit</button>";
 
 // Display latest Skills from User
 if (isset($_POST['name'])) {
-	echo "<h1>".$_POST['name']."s Records</h1>";
+	echo "<h1>".$_POST['name']." Records</h1>";
 	
 	// Get answers for the selected user
 	$stmt = $conn->prepare("SELECT completion_date FROM skills
@@ -60,7 +60,7 @@ if (isset($_POST['name'])) {
 	echo "</select>";
 	echo "<input type='hidden' name='name' value=".$_POST['name'].">";
 	echo "</form>";
-	echo "<button type='submit' form='selectdate'>Submit</button>"; 
+	echo "<button type='submit' form='selectdate'>Get Data</button>"; 
 	
 	if (isset($_POST['date'])) {
 		// Get Skills Data
