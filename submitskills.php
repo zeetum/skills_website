@@ -5,7 +5,6 @@ $conn = new PDO('mysql:host=localhost;dbname=skills', $user, $pass);
 
 if (isset($_POST["name"])) {
     echo "<h1>Submitted</h1>";
-    echo "<meta http-equiv='refresh' content='0; url=skillsform.php.php' />";
 
     $stmt = $conn->prepare("INSERT INTO skills
 			    (staff_name, completion_date, 
