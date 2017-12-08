@@ -1,6 +1,6 @@
 CREATE TABLE skills (
 	staff_name VARCHAR(20) NOT NULL,
-	completion_date DATE NOT NULL,
+	completion_date DATETIME NOT NULL,
 	q1 INT,
 	q2 INT,
 	q3 INT,
